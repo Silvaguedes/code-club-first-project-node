@@ -4,7 +4,7 @@ const express = require('express')
 
 const uuid = require('uuid')
 
-const port = 3000
+
 
 const app = express()
 
@@ -20,7 +20,7 @@ app.get('/users', (request, response) => {
 
 
 app.post('/users', (request, response) => {
-     const { name, age } = request.body
+     const { name, age} = request.body
 
      const user = { id: uuid.v4(), name, age }
 
@@ -33,7 +33,7 @@ app.put('/users/:id', (request, response) => {
 
      const { name, age } = request.body
 
-     const updatedUser = { id, name, age }
+     const updatedUser = { id, name, age, }
      const index = users.findIndex(user => user.id === id)
 
      if (index < 0) {
@@ -59,6 +59,6 @@ app.delete('/users/:id', (request, response) => {
 
 
 
-app.listen(port, () => {
-     console.log(`🚀server started on port ${port} `)
-})
+app.listen ( 3000)
+     
+ 
